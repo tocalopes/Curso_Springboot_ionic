@@ -2,13 +2,22 @@ package com.lopes.curso.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 //a implementação do serializable faz com que o java permita que a classe seja 
 //transformada em uma sequência de bytes, o que é necessário quando formos transformalas em
 //Arquivos.
+
+@Entity //Marcação do JPA. Indica que essa entidade deve ser criada com uma tabela no banco de dados
 public class Categoria implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
 	
