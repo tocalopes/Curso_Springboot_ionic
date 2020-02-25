@@ -1,5 +1,6 @@
 package com.lopes.curso.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,5 +19,6 @@ public class CategoriaService {
 		Optional<Categoria> categoria = repository.findById(id);
 		return categoria.orElse(null);
 	}
+	
 	
 }
