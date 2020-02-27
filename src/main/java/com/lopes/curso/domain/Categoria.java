@@ -10,8 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 //a implementação do serializable faz com que o java permita que a classe seja 
 //transformada em uma sequência de bytes, o que é necessário quando formos transformalas em
 //Arquivos.
@@ -26,7 +24,7 @@ public class Categoria implements Serializable{
 	private Integer id;
 	private String nome;
 	
-	@JsonManagedReference
+	//@JsonManagedReference
 	@ManyToMany(mappedBy = "categorias")
 	private List<Produto> produtos = new ArrayList<>();
 	public Categoria() {
