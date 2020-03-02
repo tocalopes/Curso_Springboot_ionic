@@ -73,21 +73,41 @@ public class CursomcApplication implements CommandLineRunner {
 		Categoria cat1 = new Categoria(null,"Informatica");
 		Categoria cat2 = new Categoria(null,"Escritório");
 		Categoria cat3 = new Categoria(null,"Cama mesa e banho");
-		Categoria cat4 = new Categoria(null,"Sex toys");
+		Categoria cat4 = new Categoria(null,"pokemons");
 		Categoria cat5 = new Categoria(null,"Narcóticos");
 		Categoria cat6 = new Categoria(null,"Web namoradas");
 		Categoria cat7 = new Categoria(null,"Tatuagens");
 
 		Produto p1 = new Produto(null,"computador",2000.00);
 		Produto p2 = new Produto(null,"impressora",800.00);
-		Produto p3 = new Produto(null,"mouse",80.00);
+		Produto p3 = new Produto(null,"mouse",82.00);
+		Produto p4 = new Produto(null,"teclado",40.00);
+		Produto p5 = new Produto(null,"pikachu",5.00);
+		Produto p6 = new Produto(null,"squirtle",100.00);
+		Produto p7 = new Produto(null,"fronha",232.00);
+		Produto p8 = new Produto(null,"floral",32.00);
+		Produto p9 = new Produto(null,"tartarugas ninjas",820.00);
+		Produto p10 = new Produto(null,"travesseiro",532.00);
+		Produto p11 = new Produto(null,"grampeador",9000.00);
 		
-		cat1.getProdutos().addAll(Arrays.asList(p1,p2,p3));
-		cat2.getProdutos().addAll(Arrays.asList(p2));
+		cat1.getProdutos().addAll(Arrays.asList(p1,p2,p3,p4));
+		cat2.getProdutos().addAll(Arrays.asList(p2,p11));
+		cat3.getProdutos().addAll(Arrays.asList(p7,p10));
+		cat4.getProdutos().addAll(Arrays.asList(p5,p6));
+		cat7.getProdutos().addAll(Arrays.asList(p8,p9));
 		
 		p1.getCategorias().addAll(Arrays.asList(cat1));
 		p2.getCategorias().addAll(Arrays.asList(cat1,cat2));
 		p3.getCategorias().addAll(Arrays.asList(cat1));
+		p4.getCategorias().addAll(Arrays.asList(cat1));
+		p5.getCategorias().addAll(Arrays.asList(cat4));
+		p6.getCategorias().addAll(Arrays.asList(cat4));
+		p7.getCategorias().addAll(Arrays.asList(cat3));
+		p8.getCategorias().addAll(Arrays.asList(cat7));
+		p9.getCategorias().addAll(Arrays.asList(cat7));
+		p10.getCategorias().addAll(Arrays.asList(cat3));
+		p11.getCategorias().addAll(Arrays.asList(cat2));
+		
 		
 		categoriaRepository.saveAll(Arrays.asList(cat1,cat2,cat3,cat4,cat5,cat6,cat7));
 		produtoRepository.saveAll(Arrays.asList(p1,p2,p3));
